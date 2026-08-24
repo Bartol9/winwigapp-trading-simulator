@@ -1,6 +1,7 @@
 name: CI
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
   pull_request:
@@ -32,4 +33,3 @@ jobs:
           dotnet-version: 9.0.x
       - run: dotnet restore WinWigApp.Server/WinWigApp.Server.csproj
       - run: dotnet build WinWigApp.Server/WinWigApp.Server.csproj --configuration Release --no-restore
-
